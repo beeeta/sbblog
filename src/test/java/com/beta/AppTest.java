@@ -1,4 +1,4 @@
-package com.beta.springboot1;
+package com.beta;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
