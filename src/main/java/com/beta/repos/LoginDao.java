@@ -9,6 +9,6 @@ import com.beta.entity.BgUser;
 
 
 @Repository
-public interface LoginUserDao extends PagingAndSortingRepository<BgUser, Long>{
+public interface LoginDao extends PagingAndSortingRepository<BgUser, Long>{
 	public List<BgUser> findAll();
 }

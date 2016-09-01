@@ -8,16 +8,11 @@ import javax.persistence.Id;
 @Entity
 public class BgFile {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private String blogFileId;
+	private String Id;
 	private String fileName;
 	private String fileUrl;
+	private String uploadTime;
 	
-	public String getBlogFileId() {
-		return blogFileId;
-	}
-	public void setBlogFileId(String blogFileId) {
-		this.blogFileId = blogFileId;
-	}
 	public String getFileName() {
 		return fileName;
 	}
@@ -30,5 +25,18 @@ public class BgFile {
 	public void setFileUrl(String fileUrl) {
 		this.fileUrl = fileUrl;
 	}
+	public String getId() {
+		return Id;
+	}
+	public void setId(String id) {
+		Id = id;
+	}
+	public String getUploadTime() {
+		return uploadTime;
+	}
+	public void setUploadTime(String uploadTime) {
+		this.uploadTime = uploadTime;
+	}
+	
 	
 }

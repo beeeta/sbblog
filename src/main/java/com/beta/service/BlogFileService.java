@@ -1,15 +1,8 @@
 package com.beta.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.beta.entity.BgFile;
 
-import com.beta.repos.BlogFileDao;
-
-@Service
-public class BlogFileService {
+public interface BlogFileService {
 	
-	@Autowired
-	private BlogFileDao blogFileDao;
-	
-	
+	Iterable<BgFile> listBgFiles();
 }
