@@ -9,15 +9,16 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+                <th>文件名称</th>
+                <th>文件路径</th>
+                <th>上传时间</th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="user : ${users}">
-                <td th:text="${user.userId}">Id</td>
-                <td th:text="${user.account}">account</td>
-                <td th:text="${user.password}">password</td>
+            <tr th:each="blog : ${blogs}">
+                <td th:text="${blog.fileName}">Id</td>
+                <td th:text="${blog.fileUrl}">account</td>
+                <td th:text="${blog.uploadTime}">password</td>
             </tr>
         </tbody>
     </table>

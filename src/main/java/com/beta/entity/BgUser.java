@@ -12,18 +12,18 @@ import javax.persistence.Id;
 @Entity
 public class BgUser {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private String userId;
+	private String id;
 	private String account;
 	private String password;
 	
 	public BgUser(){};
 	
-	public String getUserId() {
-		return userId;
+	public String getId() {
+		return id;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getAccount() {
