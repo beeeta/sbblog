@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Manager</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>文件名称</th>
+                <th>文件路径</th>
+                <th>上传时间</th>
+                <!-- <th>操作类型</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="blog : ${blogs}">
+                <td th:text="${blog.fileName}">Id</td>
+                <td th:text="${blog.fileUrl}">account</td>
+                <td th:text="${blog.uploadTime}">password</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
