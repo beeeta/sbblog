@@ -42,10 +42,15 @@ public class IndexController {
 	 */
 	@RequestMapping(path="/login",method=RequestMethod.POST)
 	public String login(BgUser user,Model model){
-		if("allen".equals(user.getAccount())&&"beta".equals(user.getPassword())){
+		if("allen".equals(user.getUsername())&&"beta".equals(user.getPassword())){
 			return "manage/manage";
 		}
 		model.addAttribute("msg"," account or password error");
 		return "log/login";
+	}
+	
+	@RequestMapping(path="manage",method=RequestMethod.GET)
+	public String manage(){
+		return "manage/manage";
 	}
 }
