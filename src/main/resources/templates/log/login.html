@@ -4,9 +4,10 @@
 </head>
 <body>
 <form action="/login" method="post">
-<span>帐号：<input type="text" name="account"></input></span>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+<span>帐号：<input type="text" name="username"></input></span>
 <span>密码：<input type="password" name="password"></input></span>
-<input type="submit" value="提交"></input><span th:text=" ${msg}"></span>
+<input type="submit" value="提交"></input>
 </form>
 </body>
 </html>

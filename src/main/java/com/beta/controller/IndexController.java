@@ -1,6 +1,7 @@
 package com.beta.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import com.beta.service.BlogFileService;
 
 
 @Controller
-public class IndexController {
+public class IndexController{
 	
 	private BlogFileService blogFileService;
 
@@ -49,8 +50,10 @@ public class IndexController {
 //		return "log/login";
 //	}
 //
-//	@RequestMapping(path="manage",method=RequestMethod.GET)
-//	public String manage(){
-//		return "manage/manage";
-//	}
+	@RequestMapping(path="/manage",method=RequestMethod.GET)
+	public String manage(Model model){
+		model.addAttribute("blogs", blogFileService.listBgFiles());
+		return "manage/manage";
+	}
+
 }

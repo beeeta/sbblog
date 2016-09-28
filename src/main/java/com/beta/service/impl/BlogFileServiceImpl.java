@@ -16,8 +16,7 @@ public class BlogFileServiceImpl implements BlogFileService{
 	public void setBlogFileDao (BlogFileDao blogFileDao) {
 		this.blogFileDao = blogFileDao;
 	}
-	
-	
+
 	public Iterable<BgFile> listBgFiles(){
 		return blogFileDao.findAll();
 	}
