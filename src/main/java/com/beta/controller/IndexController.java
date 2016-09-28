@@ -14,7 +14,7 @@ import com.beta.service.BlogFileService;
 public class IndexController {
 	
 	private BlogFileService blogFileService;
-	
+
 	@Autowired
 	public void setBlogFileService(BlogFileService blogFileService) {
 		this.blogFileService = blogFileService;
@@ -37,20 +37,20 @@ public class IndexController {
 		return "log/login";
 	}
 	
-	/**
-	 * 管理员登录请求
-	 */
-	@RequestMapping(path="/login",method=RequestMethod.POST)
-	public String login(BgUser user,Model model){
-		if("allen".equals(user.getUsername())&&"beta".equals(user.getPassword())){
-			return "manage/manage";
-		}
-		model.addAttribute("msg"," account or password error");
-		return "log/login";
-	}
-	
-	@RequestMapping(path="manage",method=RequestMethod.GET)
-	public String manage(){
-		return "manage/manage";
-	}
+//	/**
+//	 * 管理员登录请求
+//	 */
+//	@RequestMapping(path="/login",method=RequestMethod.POST)
+//	public String login(BgUser user,Model model){
+//		if("allen".equals(user.getUsername())&&"beta".equals(user.getPassword())){
+//			return "manage/manage";
+//		}
+//		model.addAttribute("msg"," account or password error");
+//		return "log/login";
+//	}
+//
+//	@RequestMapping(path="manage",method=RequestMethod.GET)
+//	public String manage(){
+//		return "manage/manage";
+//	}
 }

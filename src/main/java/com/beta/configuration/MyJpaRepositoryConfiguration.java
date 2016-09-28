@@ -6,6 +6,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration
 @EnableJpaRepositories("com.beta.repos")
 public class MyJpaRepositoryConfiguration {
-	//EntityManagerFactory,DataSource,PlatformTransactionManager Bean 的申明
-	
+
 }
