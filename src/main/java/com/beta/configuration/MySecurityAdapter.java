@@ -29,12 +29,13 @@ public class MySecurityAdapter extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/manage");
 		http.authorizeRequests().antMatchers("/manage/**").hasRole("ADMIN")
-				.antMatchers("/").permitAll().anyRequest().authenticated();
+				.antMatchers("/").permitAll().antMatchers("/resources/**").permitAll().
+				anyRequest().authenticated();
 	}
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**");
+//		web.ignoring().antMatchers("/static/**");
 	}
 	
 	@Bean

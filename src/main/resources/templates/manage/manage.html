@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Manager</title>
+    <script th:href="@{/manager.js}"></script>
 </head>
 <body>
     <table>
@@ -11,6 +12,7 @@
                 <th>文件名称</th>
                 <th>文件路径</th>
                 <th>上传时间</th>
+                <th>操作</th>
                 <!-- <th>操作类型</th> -->
             </tr>
         </thead>
@@ -19,6 +21,10 @@
                 <td th:text="${blog.fileName}">Id</td>
                 <td th:text="${blog.fileUrl}">account</td>
                 <td th:text="${blog.uploadTime}">password</td>
+                <td>
+                    <button th:onclick="deleteManage">删除</button>
+                    <button th:onclick="editManage">编辑</button>
+                </td>
             </tr>
         </tbody>
     </table>

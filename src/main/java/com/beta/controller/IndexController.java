@@ -2,6 +2,8 @@ package com.beta.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.env.Environment;
+import org.springframework.core.env.EnvironmentCapable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +15,11 @@ import com.beta.service.BlogFileService;
 
 @Controller
 public class IndexController{
-	
+
+
+	@Autowired
+	private Environment environment;
+
 	private BlogFileService blogFileService;
 
 	@Autowired
