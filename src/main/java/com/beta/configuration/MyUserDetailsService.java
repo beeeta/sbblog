@@ -29,6 +29,9 @@ public class MyUserDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		BgUser user = userDao.findByUsername(username);
+		if(null==user){
+			return null;
+		}
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
 		return new User(user.getUsername(), user.getPassword(), authorities);

@@ -19,6 +19,7 @@ public class MySecurityAdapter extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(getUserDetailService());
 	}
+
 	/**
 	 * 请求拦截
 	 * 主要的请求路径匹配器：antMatchers,regexMatchers
@@ -29,13 +30,18 @@ public class MySecurityAdapter extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/manage");
 		http.authorizeRequests().antMatchers("/manage/**").hasRole("ADMIN")
-				.antMatchers("/").permitAll().antMatchers("/resources/**").permitAll().
-				anyRequest().authenticated();
+				.antMatchers("/").permitAll()
+				.anyRequest().authenticated();
 	}
 
+	/**
+	 * 忽略静态资源的请求的鉴权
+	 * @param web
+	 * @throws Exception
+	 */
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-//		web.ignoring().antMatchers("/static/**");
+		web.ignoring().antMatchers("/*.js","/*.css");
 	}
 	
 	@Bean

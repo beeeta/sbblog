@@ -16,7 +16,6 @@ import com.beta.service.BlogFileService;
 @Controller
 public class IndexController{
 
-
 	@Autowired
 	private Environment environment;
 
@@ -48,7 +47,7 @@ public class IndexController{
 //	 * 管理员登录请求
 //	 */
 //	@RequestMapping(path="/login",method=RequestMethod.POST)
-//	public String login(BgUser user,Model model){
+//	static String login(BgUser user,Model model){
 //		if("allen".equals(user.getUsername())&&"beta".equals(user.getPassword())){
 //			return "manage/manage";
 //		}
